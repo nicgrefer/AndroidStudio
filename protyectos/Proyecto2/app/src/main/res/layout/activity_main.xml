@@ -32,6 +32,7 @@
             android:layout_margin="3dp"
             android:text="@string/saludar" />
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,7 +152,22 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Azul" />
+
         </RadioGroup>
+
+
+        <Spinner
+            android:id="@+id/sp_listado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <ListView
+            android:id="@+id/lv_listado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
 
     </LinearLayout>
 </layout>
