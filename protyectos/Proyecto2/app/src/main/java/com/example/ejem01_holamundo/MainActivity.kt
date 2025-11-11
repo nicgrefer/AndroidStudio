@@ -14,7 +14,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ejem01_holamundo.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
-
 class MainActivity : AppCompatActivity() {
     // no es apropiado usar -> findViewById<>(R.id.b)
     // se usa View Binding
@@ -38,15 +37,15 @@ class MainActivity : AppCompatActivity() {
         // usamos un lambda para el evento onClick cuando el interfaz solo tiene un metodo a desarrollar
         // el onclicklistener -> tiene el metodo onClick y se usa lambda para ello (lambda se ahorra codigo)
         binding.bSaludar.setOnClickListener {
-            val user: Usuario = Usuario(
-                binding.tieNombre.text.toString(),
-                binding.tieEdad.text.toString().toInt(),
-                binding.cbSoltero.isActivated,
-                binding.sCiudad.selectedItem.toString(),
-                // obtener el texto del radio button seleccionado del radio group mediante su id
-                // buscar el radio button seleccionado dentro del radio group y obtener su texto
-                findViewById<RadioButton>(binding.rgColorFavorito.checkedRadioButtonId).text.toString()
-            )
+        val user: Usuario = Usuario(
+            binding.tieNombre.text.toString(),
+            binding.tieEdad.text.toString().toInt(),
+            binding.cbSoltero.isActivated,
+            binding.sCiudad.selectedItem.toString(),
+            // obtener el texto del radio button seleccionado del radio group mediante su id
+            // buscar el radio button seleccionado dentro del radio group y obtener su texto
+            findViewById<RadioButton>(binding.rgColorFavorito.checkedRadioButtonId).text.toString()
+        )
             // al pulsar el botón, se ejecuta este código
             Log.d("depurando", "Hola " + user)
         }
@@ -67,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             // definida en el sistema operativo Android.
             datos // la lista de datos a mostrar
         )
+
 
         var datosUsuario: ArrayAdapter <Usuario> = ArrayAdapter(
             this,
