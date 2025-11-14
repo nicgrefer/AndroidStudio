@@ -101,13 +101,44 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.cbSoltero.setOnCheckedChangeListener { soltero, estaSeleccionado ->
+            Log.d("depurando", "Checkbox seleccionado: $estaSeleccionado")
+        }
 
+        binding.rgColorFavorito.setOnCheckedChangeListener { group, checkedId ->
+           //Log.d("depurando", findViewById<RadioButton>(checkedId).text.toString())
+           Log.d("depurando", group.checkedRadioButtonId.toString()+" - "+ checkedId)
+            /*
+            if (group.checkedRadioButtonId == binding,rbRojo.id) {
+                Log.d("depurando", "Color Rojo seleccionado")
+            } else if (group.checkedRadioButtonId == binding.rbAzul.id) {
+                Log.d("depurando", "Color Azul seleccionado")
+            } else if (group.checkedRadioButtonId == binding.rbVerde.id) {
+                Log.d("depurando", "Color Verde seleccionado")
+            }
+
+            otra opcion */
+
+            /*
+            when(group.checkedRadioButtonId){
+                binding.rbRojo.id -> Log.d("depurando", "Color Rojo seleccionado")
+                binding.rbAzul.id -> Log.d("depurando", "Color Azul seleccionado")
+                binding.rbVerde.id -> Log.d("depurando", "Color Verde seleccionado")
+            }
+            */
+
+        }
+
+
+/*
         // este es para lista ya que usa onItemClickListener y solo tiene un metodo
         binding.lvListado.onItemClickListener = AdapterView.OnItemClickListener { adapdor, view, position, id ->
             Log.d("depurando", adapdor?.getItemAtPosition(position).toString())
+
+ */
         }
 
     }
 
-}
+
 
