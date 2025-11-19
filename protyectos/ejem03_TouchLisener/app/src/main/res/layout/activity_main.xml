@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_fondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ED6363"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_datos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#00FFFFFF"
+        android:text="Hello World!"
+        android:textSize="60sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_frontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9CE29F"
+        android:orientation="horizontal"></LinearLayout>
+
+</LinearLayout>
