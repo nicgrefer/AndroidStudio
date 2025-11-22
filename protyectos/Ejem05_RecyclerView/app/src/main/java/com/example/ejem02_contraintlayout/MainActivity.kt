@@ -50,5 +50,10 @@ class MainActivity : AppCompatActivity() {
         var adaptador= ArrayAdapter(this,android.R.layout.simple_list_item_1,listaDatos)
        // binding.lvNombres.adapter=adaptador
 
+        binding.tvNombre.setText(listaDatos[0].nombre)
+        binding.tvEdad.setText(listaDatos[0].edad.toString())
+        binding.tvEmail.setText(listaDatos[0].email)
+
+
     }
 }
