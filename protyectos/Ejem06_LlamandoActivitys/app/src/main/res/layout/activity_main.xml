@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -14,11 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toTopOf="@id/b_pasarActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_dato"
@@ -32,10 +31,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
         android:text="Pasar a Activity"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/til_dato"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-        app:layout_constraintTop_toBottomOf="@id/til_dato" />
 </androidx.constraintlayout.widget.ConstraintLayout>
