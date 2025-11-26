@@ -1,6 +1,7 @@
 package com.example.ejem06_llamandoactivitys
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,8 +19,22 @@ class SegundoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val datoRecibido= intent.getStringExtra("DATO")
-        binding.tvDatoRecibido.text=datoRecibido
+        //val datoRecibido= intent.getStringExtra("DATO")
+        val datoRecibido:Usuario= intent.getParcelableExtra("DATO",Usuario::class.java)!!
+        binding.tvDatoRecibido.text=datoRecibido.toString()
+
+
+
+        binding.bDevolver.setOnClickListener {
+            val datoDevolver=binding.tietDatoDevuelto.text.toString()
+            Log.d("depurando","Dato a devolver: $datoDevolver")
+
+            intent.putExtra("dato_devuelto",datoDevolver)
+            setResult(RESULT_OK,intent)
+            finish()
+        }
+
+
 
 
     }
