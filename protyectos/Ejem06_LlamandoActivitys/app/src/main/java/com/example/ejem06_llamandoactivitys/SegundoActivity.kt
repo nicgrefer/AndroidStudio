@@ -22,8 +22,11 @@ class SegundoActivity : AppCompatActivity() {
         //val datoRecibido= intent.getStringExtra("DATO")
         val datoRecibido:Usuario= intent.getParcelableExtra("DATO",Usuario::class.java)!!
         binding.tvDatoRecibido.text=datoRecibido.toString()
+        // recibir el objeto Usuario
+        var usuario : Usuario = intent.getParcelableExtra("usuario", Usuario::class.java)!!
+        Log.d("depurando","Usuario recibido: $usuario")
 
-
+        binding.tvMuestroLogin.text= usuario.toString()
 
         binding.bDevolver.setOnClickListener {
             val datoDevolver=binding.tietDatoDevuelto.text.toString()
@@ -33,6 +36,8 @@ class SegundoActivity : AppCompatActivity() {
             setResult(RESULT_OK,intent)
             finish()
         }
+
+
 
 
 

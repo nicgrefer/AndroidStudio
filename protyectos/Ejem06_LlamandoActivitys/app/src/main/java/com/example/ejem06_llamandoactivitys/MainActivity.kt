@@ -30,9 +30,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-
         binding.bPasarActivity.setOnClickListener {
             val valor = binding.tietDato.text.toString()
             val user:Usuario=Usuario(valor)
@@ -45,12 +42,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(testigo)*/
 
             llamadaConRetorno.launch(testigo)
-
-
-
-
         }
 
+        binding.bLogIn.setOnClickListener{
+
+            var usuario : Usuario = Usuario(binding.tilNombre.toString(),
+                binding.tilEdad.toString().toInt(),
+                binding.tilCorreo.toString());
+
+            val entrego: Intent = Intent(this, SegundoActivity::class.java)
+            entrego.putExtra("usuario",usuario)
+
+        }
 
 
 
