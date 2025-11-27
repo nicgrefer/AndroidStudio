@@ -1,4 +1,4 @@
-package com.example.ejem02_contraintlayout
+package com.example.Ejem05_RecyclerView
 
 data class Usuario(
     val nombre: String,

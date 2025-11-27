@@ -1,9 +1,9 @@
-package com.example.ejem02_contraintlayout
+package com.example.Ejem05_RecyclerView
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ejem02_contraintlayout.databinding.UsuarioBinding
+import com.example.Ejem05_RecyclerView.databinding.UsuarioBinding
 
 class UsuarioAdapter(val listaUsuario: MutableList<Usuario>): RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
     override fun onCreateViewHolder(

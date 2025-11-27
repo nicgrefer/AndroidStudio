@@ -2,60 +2,39 @@ package com.example.ejem06_llamandoactivitys
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.registerForActivityResult
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.ejem06_llamandoactivitys.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-    lateinit var binding: ActivityMainBinding
-
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.bLogIn.setOnClickListener {
+            val nombre = binding.tietNombre.text?.toString()?.trim().orEmpty()
+            val edadStr = binding.tietEdad.text?.toString()?.trim().orEmpty()
+            val correo = binding.tietCorreo.text?.toString()?.trim().orEmpty()
 
-
-        val llamadaConRetorno=registerForActivityResult(ActivityResultContracts.StartActivityForResult() ) { resultado ->
-            if (resultado.resultCode== RESULT_OK) {
-                val datoDevuelto= resultado.data?.getStringExtra("dato_devuelto")
-                Log.d("depurando","Dato devuelto: $datoDevuelto")
+            if (nombre.isEmpty() || edadStr.isEmpty() || correo.isEmpty()) {
+                Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            val edad = edadStr.toIntOrNull()
+            if (edad == null) {
+                Toast.makeText(this, "Edad no válida", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val usuario = Usuario(nombre = nombre, edad = edad, email = correo)
+            val intent = Intent(this, SegundoActivity::class.java).apply {
+                putExtra("usuario", usuario)
+            }
+            startActivity(intent)
         }
-
-        binding.bPasarActivity.setOnClickListener {
-            val valor = binding.tietDato.text.toString()
-            val user:Usuario=Usuario(valor)
-            Log.d("depurando","Valor a pasar: $valor")
-
-            val testigo: Intent = Intent(this, SegundoActivity::class.java)
-            testigo.putExtra("DATO",user)
-           /*
-            Enviar información al segundo activity
-            startActivity(testigo)*/
-
-            llamadaConRetorno.launch(testigo)
-        }
-
-        binding.bLogIn.setOnClickListener{
-
-            var usuario : Usuario = Usuario(binding.tilNombre.toString(),
-                binding.tilEdad.toString().toInt(),
-                binding.tilCorreo.toString());
-
-            val entrego: Intent = Intent(this, SegundoActivity::class.java)
-            entrego.putExtra("usuario",usuario)
-
-        }
-
-
-
     }
 }

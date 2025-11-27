@@ -1,4 +1,4 @@
-package com.example.ejem02_contraintlayout
+package com.example.Ejem05_RecyclerView
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ejem02_contraintlayout.databinding.ActivityMainBinding
+import com.example.Ejem05_RecyclerView.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         //var listaDatos=listOf("Elemento 1","Elemento 2","Elemento 3","Elemento 4","Elemento 5")
         var listaDatos=mutableListOf<Usuario>()
-        listaDatos.add(Usuario("Juan",25,"a@b.com"))
-        listaDatos.add(Usuario("Ana",30,"c@d.com"))
-        listaDatos.add(Usuario("Luis",28,"e@f.com"))
+        listaDatos.add(Usuario("Juan",25,"juan@gmail.com"))
+        listaDatos.add(Usuario("Ana",30,"ana@gmail.com"))
+        listaDatos.add(Usuario("Luis",28,"luis@gmail.com"))
 
    //     var adaptador= ArrayAdapter(this,android.R.layout.simple_list_item_1,listaDatos)
    //     binding.rvNombres.adapter=adaptador
