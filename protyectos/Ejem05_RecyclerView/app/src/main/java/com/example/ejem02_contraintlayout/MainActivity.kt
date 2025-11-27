@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ejem02_contraintlayout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }*/
         var pulsacion= View.OnClickListener() {
             Log.d("depurando","Pulsado")
-            //(binding.lvNombres.adapter as ArrayAdapter<String>).add(binding.tietNombre.text.toString())
+            //(binding.rvNombres.adapter as ArrayAdapter<String>).add(binding.tietNombre.text.toString())
 
 
         }
@@ -42,17 +44,19 @@ class MainActivity : AppCompatActivity() {
         binding.b3.setOnClickListener ( pulsacion )
 
 
+        //var listaDatos=listOf("Elemento 1","Elemento 2","Elemento 3","Elemento 4","Elemento 5")
+        var listaDatos=mutableListOf<Usuario>()
+        listaDatos.add(Usuario("Juan",25,"a@b.com"))
+        listaDatos.add(Usuario("Ana",30,"c@d.com"))
+        listaDatos.add(Usuario("Luis",28,"e@f.com"))
 
-        var listaDatos= mutableListOf<Usuario>()
-        listaDatos.add(Usuario("Juan", 23, "juan@google.com"))
-        listaDatos.add(Usuario ("Ana", 31, "ana@gmail.com"))
-        listaDatos.add(Usuario ("Pedro", 40, "pepe@gmail.com"))
-        var adaptador= ArrayAdapter(this,android.R.layout.simple_list_item_1,listaDatos)
-       // binding.lvNombres.adapter=adaptador
+   //     var adaptador= ArrayAdapter(this,android.R.layout.simple_list_item_1,listaDatos)
+   //     binding.rvNombres.adapter=adaptador
+        val adaptadorRecycler= UsuarioAdapter(listaDatos)
+        binding.rvNombres.adapter=adaptadorRecycler
+        //binding.rvNombres.layoutManager = LinearLayoutManager(this)
+        binding.rvNombres.layoutManager = GridLayoutManager(this,2)
 
-        binding.tvNombre.setText(listaDatos[0].nombre)
-        binding.tvEdad.setText(listaDatos[0].edad.toString())
-        binding.tvEmail.setText(listaDatos[0].email)
 
 
     }

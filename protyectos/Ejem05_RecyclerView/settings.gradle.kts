@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ejem05_ConstraintLayout"
+rootProject.name = "Ejem05_RecyclerView"
 include(":app")
  
