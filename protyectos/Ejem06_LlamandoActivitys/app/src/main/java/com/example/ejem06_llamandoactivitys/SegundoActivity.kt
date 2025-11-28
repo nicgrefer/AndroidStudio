@@ -1,9 +1,7 @@
 package com.example.ejem06_llamandoactivitys
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ejem06_llamandoactivitys.databinding.ActivitySegundoBinding
 
@@ -16,40 +14,27 @@ class SegundoActivity : AppCompatActivity() {
         binding = ActivitySegundoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // leer de forma compatible con distintas API
-        val datoRecibido: Usuario? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("DATO", Usuario::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra("DATO") as? Usuario
-        }
+        val usuarioRecibido = intent.getParcelableExtra<Usuario>("DATO",Usuario::class.java)
+       /* usuarioRecibido?.let {
+            binding.tietNombre2.setText(it.nombre)
+            binding.tietEdad2.setText(it.edad.toString())
+            binding.tietEmail2.setText(it.email)
+        }*/
+        binding.user=usuarioRecibido
 
-        val usuario: Usuario? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("usuario", Usuario::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra("usuario") as? Usuario
-        }
+        binding.bPasarActivity2.setOnClickListener {
+            val nombre = binding.tietNombre2.text.toString()
+            val edad = binding.tietEdad2.text.toString().toIntOrNull() ?: 0
+            val email = binding.tietEmail2.text.toString()
 
-        if (usuario == null && datoRecibido == null) {
-            Log.e("SegundoActivity", "No se recibió usuario en el Intent (claves probadas: \"usuario\",\"DATO\"). Cerrando actividad.")
-            finish()
-            return
-        }
+            val usuarioDevuelto = Usuario(nombre, edad, email)
 
-        // mostrar datos (prioriza `usuario`, si no existe usa `datoRecibido`)
-        val mostrar = usuario ?: datoRecibido!!
-        binding.tvMuestroLogin.text = mostrar.toString()
-        binding.tvDatoRecibido.text = datoRecibido?.toString() ?: ""
-
-        binding.bDevolver.setOnClickListener {
-            val datoDevolver = binding.tietDatoDevuelto.text.toString()
-            Log.d("SegundoActivity", "Dato a devolver: $datoDevolver")
-
-            val resultIntent = Intent().apply {
-                putExtra("dato_devuelto", datoDevolver)
+            // Devolver usuario a MainActivity
+            val data = Intent().apply {
+                putExtra("USUARIO_DEVUELTO", usuarioDevuelto)
             }
-            setResult(RESULT_OK, resultIntent)
+
+            setResult(RESULT_OK, data)
             finish()
         }
     }

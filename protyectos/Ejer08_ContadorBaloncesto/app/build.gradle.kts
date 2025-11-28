@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ejem06_llamandoactivitys"
+    namespace = "com.example.ejer08_contadorbaloncesto"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.ejem06_llamandoactivitys"
-        minSdk = 33
+        applicationId = "com.example.ejer08_contadorbaloncesto"
+        minSdk = 30
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -33,10 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        viewBinding = true
-        dataBinding =true
-    }
 }
 
 dependencies {
@@ -46,6 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
