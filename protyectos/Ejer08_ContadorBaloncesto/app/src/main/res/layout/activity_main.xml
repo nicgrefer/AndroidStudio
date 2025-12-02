@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -14,11 +15,9 @@
         android:layout_height="50dp"
         android:background="#888BC34A"
         android:gravity="center"
-        android:text="Ejem02"
+        android:text="Contador Baloncesto"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,46 +25,88 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="TextView"
+        android:text="Local: 0 - Visitante: 0"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gl_local"
-        android:layout_width="409dp"
+    <LinearLayout
+        android:id="@+id/ll_opciones"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_contador">
 
-        <TextView
-            android:id="@+id/tv_locales"
+        <RadioButton
+            android:id="@+id/rb_tiro_libre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Locales"
-            android:textSize="20sp" />
-    </androidx.gridlayout.widget.GridLayout>
+            android:layout_marginEnd="10dp"
+            android:text="Tiro libre (1)"
+            android:checked="true" />
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gl_visitante"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_local">
-
-        <TextView
-            android:id="@+id/tv_visitante"
+        <RadioButton
+            android:id="@+id/rb_canasta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Visitante"
-            android:textSize="20sp" />
-    </androidx.gridlayout.widget.GridLayout>
+            android:layout_marginEnd="10dp"
+            android:text="Canasta (2)" />
+
+        <RadioButton
+            android:id="@+id/rb_triple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Triple (3)" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_opciones">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_locales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Locales"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gl_buttons_local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:id="@+id/tv_visitantes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Visitantes"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gl_buttons_visitante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
