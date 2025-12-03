@@ -66,7 +66,8 @@ class MainActivity : AppCompatActivity() {
             // definida en el sistema operativo Android.
             datos // la lista de datos a mostrar
         )
-
+       var adaptador: ArrayAdapter <String> = ArrayAdapter (this,android.R.layout.simple_list_item_1,datos)
+        binding.lvListado.adapter = adaptador
 
         var datosUsuario: ArrayAdapter <Usuario> = ArrayAdapter(
             this,
@@ -80,36 +81,29 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        binding.lvListado.adapter = adapterDAtos
+       // binding.lvListado.adapter = adapterDAtos
         binding.spListado.adapter = datosUsuario
 
         // este para spinne
-        binding.spListado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                adapdor: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                Log.d("depurando", adapdor?.selectedItem.toString())
+        binding.spListado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(adapdor: AdapterView<*>?, view: View?, posicion: Int, id: Long) {
+                Log.d("depurando" , adapdor?.selectedItem.toString())
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                Log.d("depurando", "Nada seleccionado")
+            override fun onNothingSelected(adapdor: AdapterView<*>?) {
+               Log.d("depurando", "Nada seleccionado")
             }
-
         }
 
-        binding.cbSoltero.setOnCheckedChangeListener { soltero, estaSeleccionado ->
-            Log.d("depurando", "Checkbox seleccionado: $estaSeleccionado")
+        binding.cbSoltero.setOnCheckedChangeListener { cbsoltero, isSoltero ->
+            Log.d("depurando", "Checkbox seleccionado: $isSoltero")
         }
 
         binding.rgColorFavorito.setOnCheckedChangeListener { group, checkedId ->
            //Log.d("depurando", findViewById<RadioButton>(checkedId).text.toString())
            Log.d("depurando", group.checkedRadioButtonId.toString()+" - "+ checkedId)
             /*
-            if (group.checkedRadioButtonId == binding,rbRojo.id) {
+            if (group.checkedRadioButtonId == binding.rbRojo.id) {
                 Log.d("depurando", "Color Rojo seleccionado")
             } else if (group.checkedRadioButtonId == binding.rbAzul.id) {
                 Log.d("depurando", "Color Azul seleccionado")
