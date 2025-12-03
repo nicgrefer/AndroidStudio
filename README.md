@@ -26,6 +26,60 @@ val longNum = 10L          // Long
 val floatNum = 10.0F       // Float
 ```
 
+> [!NOTE]
+> Cuando queremos extraer por ejemplo de un string ciertos balores teniendo en cuenta su posicion se usa `.substring` <br>
+> Ejemplo: `var fecha: String = "2024-06-15"` (teniendo en cuenta que los valores de posicion inicia en 0) <br>
+> con `fecha.substring(5,7).toInt()` extraeriamos -> `06` <br>
+> Del String original --creas--> **sub**string
+
+### Bucles
+
+Tenemos los tipicos bucles con **for** o **while**
+
+#### FOR
+
+````kotlin
+var arrayEnteros: Array<Int> = arrayOf(1,2,3,4,5)
+
+for (numero in arrayEnteros){ // recorre el array // si tenemos la variable arriba y la volvemos a usar aqui se sobreescribe
+            Log.d("depurando", "numero = $numero") // muestra cada numero
+        }
+````
+
+Tambien esta la funcion indices que devuelve el rango de índices del array `["uno", "dos", "tres"]` -> `0..2`. 
+````kotlin
+var arrayCadenas: Array<String> = arrayOf("uno","dos","tres")
+
+for (i in arrayCadenas.indices){ // recorre el array por indices
+            Log.d("depurando", "cadena en indice $i = ${arrayCadenas[i]}") // muestra cada cadena con su indice
+        }
+````
+
+Alternatibamente a esto se puede usar la funcion `.size - 1` 
+
+````kotlin
+for(j in 0 .. arrayCadenas.size-1){
+    Log.d("depurando", "cadena en indice $j = ${arrayCadenas[j]}") // muestra cada cadena con su indice
+    // meter dentro valores de variables ${variable}
+    Log.d("depurando","cadena en indice $j =  + ${arrayCadenas.get(j)}") // otra forma de hacerlo
+}
+
+````
+### Array Bidimensional -> Matriz
+
+````kotlin
+val arrayBidimensional: Array<Array<Int>> = arrayOf(
+            arrayOf(1,2,3),
+            arrayOf(4,5,6),
+            arrayOf(7,8,9)
+        )
+        for (arrayInterno in arrayBidimensional){
+            for(elemento in arrayInterno){
+                Log.d("depurando", "elemento = $elemento")
+            }
+        }
+````
+
 ### Clases y Objetos
 
 Kotlin permite crear clases de forma concisa:
@@ -46,6 +100,11 @@ val pedro = Persona("Pedro", 33)
 val paco = Persona("Paco", 30)
 pedro.saludar(paco)
 ```
+Por lo general las clases que se crean en Kotlin no se pueden heredar a no ser que en esa clase pongas por delante `open` como por ejemplo: 
+
+````kotlin
+open  class SerHumano(var vivo: Boolean = true)
+````
 
 ### Data Classes
 
@@ -55,9 +114,12 @@ Para clases que solo contienen datos, Kotlin ofrece `data class`:
 data class Usuario(
     val nombre: String,
     val edad: Int,
-    var email: String
+    var email: String?
 )
 ```
+
+>[!NOTE]
+> Al poner el `?` significa que ese valor pued ser **nulo**
 
 Las data classes generan automáticamente: `equals()`, `hashCode()`, `toString()`, `copy()`
 
@@ -83,6 +145,15 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
+para esto fichero `buitd . gradle. kts` ay que poner :
+````
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+````
+despues del kotlinOptions    z
 
 ### Listeners y Eventos
 
@@ -113,6 +184,13 @@ var pulsacion = View.OnClickListener {
 
 binding.button.setOnClickListener(pulsacion)
 ```
+
+Cuando al querer recoger los datos de un formulario al pulsar y entre los datos ay un radiobuton ay que :
+````kotlin
+// obtener el texto del radio button seleccionado del radio group mediante su id
+// buscar el radio button seleccionado dentro del radio group y obtener su texto
+    findViewById<RadioButton>(binding.rgColorFavorito.checkedRadioButtonId).text.toString()
+````
 
 ### Touch Listeners
 
@@ -161,6 +239,26 @@ binding.lvNombres.adapter = adaptador
 // Añadir elementos
 (binding.lvNombres.adapter as ArrayAdapter<String>).add("Nuevo elemento")
 ```
+
+### Componente Spinne
+
+Cuando implementamos un spinner es necesario que este (para recoger el balor seleccionado) meter 2 funciones. 
+- onItemSelected
+- onNothingSelected
+
+ al implemetar estas `fun` se genera *automaticamente* el codigo :
+
+````kotlyn
+binding.spListado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(adapdor: AdapterView<*>?, view: View?, posicion: Int, id: Long) {
+                Log.d("depurando" , adapdor?.selectedItem.toString())
+            }
+
+            override fun onNothingSelected(adapdor: AdapterView<*>?) {
+               Log.d("depurando", "Nada seleccionado")
+            }
+        }
+````
 
 ### Logging
 
