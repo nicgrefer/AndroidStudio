@@ -7,6 +7,8 @@ Este repositorio contiene ejemplos prácticos y teoría sobre desarrollo de apli
 - [Fundamentos de Kotlin](#fundamentos-de-kotlin)
 - [Desarrollo Android](#desarrollo-android)
 - [Proyectos de Ejemplo](#proyectos-de-ejemplo)
+- [Nuevas adiciones](#nuevas-adiciones)
+- [Guía rápida para estudiar](#guía-rápida-para-estudiar)
 
 ---
 
@@ -201,6 +203,42 @@ Log.i("info", "Mensaje informativo")
 - Manejo de estado (operador, números)
 - Event handlers para múltiples botones
 - Uso de `when` para operaciones
+
+---
+
+## Nuevas adiciones (detectadas en el repositorio)
+
+- Kotlin_Cheat_Sheet.pdf  
+  Hoja de referencia rápida con sintaxis y ejemplos comunes de Kotlin. Útil para consultas rápidas mientras programas.
+
+- Ejercicios 2025-26.pdf  
+  Colección de ejercicios y prácticas para reforzar los temas vistos en clase. Recomendado imprimir o abrir en paralelo.
+
+- EnunciadoEjercicioDelEjemplo6.txt  
+  Enunciado concreto del ejercicio 6: abrir este archivo para ver los requisitos, pasos y criterios de entrega del ejercicio.
+
+- Carpeta protyectos/  
+  Contiene proyectos adicionales o material complementario. Observa que el nombre tiene un posible error tipográfico ("protyectos") — no cambiar el nombre sin confirmar, pero revisa su contenido para más ejemplos.
+
+- .gitignore y .idea (configuración)  
+  Archivos de configuración/IDE; no contienen código didáctico, puedes ignorarlos al estudiar.
+
+---
+
+## Guía rápida para estudiar
+
+Orden recomendado para revisar el material (rápido y práctico):
+
+1. Lee el apartado "Fundamentos de Kotlin" para repasar tipos, clases y data classes.
+2. Abre Kotlin_Cheat_Sheet.pdf para tener una referencia rápida mientras practicas.
+3. Revisa "Desarrollo Android" (View Binding, listeners, touch) y prueba los snippets en Android Studio.
+4. Abre los proyectos de ejemplo en la carpeta raíz (Ejem02_ConstraintLayout, ejem03_TouchListener, etc.) en el orden listado:
+   - Ejecuta cada proyecto en emulador/dispositivo y prueba las funcionalidades.
+5. Lee EnunciadoEjercicioDelEjemplo6.txt cuando llegues al ejercicio 6 para conocer los requisitos exactos.
+6. Trabaja los ejercicios de Ejercicios 2025-26.pdf; intenta implementarlos y compara con los ejemplos del repositorio.
+7. Explora protyectos/ para material adicional o proyectos de apoyo.
+
+Sugerencia práctica: crea una copia del proyecto de ejemplo, modifica pequeñas cosas (colores, textos, listeners) y observa cómo cambian las respuestas en la app. Eso ayuda a entender qué hace cada bloque de código.
 
 ---
 
