@@ -64,7 +64,6 @@
             android:id="@+id/til_email2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/b_pasarActivity2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_edad2">
@@ -73,9 +72,19 @@
                 android:id="@+id/tiet_email2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{user.email}"
-                android:hint="email" />
+                android:hint="email"
+                android:text="@{user.email}" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/cbSoltero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{user.soltero}"
+            android:text="Soltero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_email2" />
 
         <Button
             android:id="@+id/b_pasarActivity2"
@@ -84,10 +93,13 @@
             android:layout_margin="5dp"
             android:text="Volver a primera pestaña"
             app:layout_constraintEnd_toEndOf="parent"
+
+
+            app:layout_constraintHorizontal_bias="0.446"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbSoltero" />
 
 
-            app:layout_constraintTop_toBottomOf="@id/til_email2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

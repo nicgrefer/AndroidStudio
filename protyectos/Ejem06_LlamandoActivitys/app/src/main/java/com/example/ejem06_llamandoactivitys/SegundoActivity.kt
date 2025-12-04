@@ -15,26 +15,29 @@ class SegundoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val usuarioRecibido = intent.getParcelableExtra<Usuario>("DATO",Usuario::class.java)
-       /* usuarioRecibido?.let {
-            binding.tietNombre2.setText(it.nombre)
-            binding.tietEdad2.setText(it.edad.toString())
-            binding.tietEmail2.setText(it.email)
-        }*/
+        /* usuarioRecibido?.let {
+             binding.tietNombre2.setText(it.nombre)
+             binding.tietEdad2.setText(it.edad.toString())
+             binding.tietEmail2.setText(it.email)
+         }*/
         binding.user=usuarioRecibido
 
         binding.bPasarActivity2.setOnClickListener {
-            val nombre = binding.tietNombre2.text.toString()
+            /*val nombre = binding.tietNombre2.text.toString()
             val edad = binding.tietEdad2.text.toString().toIntOrNull() ?: 0
             val email = binding.tietEmail2.text.toString()
 
-            val usuarioDevuelto = Usuario(nombre, edad, email)
+            val usuarioDevuelto = Usuario(nombre, edad, email)*/
+            val usuarioDevuelto= binding.user
 
             // Devolver usuario a MainActivity
-            val data = Intent().apply {
+            /*val data = Intent().apply {
                 putExtra("USUARIO_DEVUELTO", usuarioDevuelto)
-            }
+            }*/
 
-            setResult(RESULT_OK, data)
+            intent.putExtra("USUARIO_DEVUELTO", usuarioDevuelto)
+
+            setResult(RESULT_OK, intent)
             finish()
         }
     }

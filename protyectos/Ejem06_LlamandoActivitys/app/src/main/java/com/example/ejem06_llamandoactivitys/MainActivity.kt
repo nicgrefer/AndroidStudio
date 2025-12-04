@@ -42,8 +42,9 @@ class MainActivity : AppCompatActivity() {
             val nombre = binding.tietNombre.text.toString()
             val edad = binding.tietEdad.text.toString().toIntOrNull() ?: 0
             val email = binding.tietEmail.text.toString()
+            val soltero = binding.cbSoltero.isChecked
 
-            val usuario = Usuario(nombre, edad, email)
+            val usuario = Usuario(nombre, edad, email,soltero)
 
             // Lanzamos Segunda Activity sin agregar a la lista todavía
             val intent = Intent(this, SegundoActivity::class.java)

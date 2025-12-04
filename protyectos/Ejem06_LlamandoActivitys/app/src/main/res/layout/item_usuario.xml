@@ -28,6 +28,7 @@
 
                 <TextView
                     android:id="@+id/tv_nombre"
+                    tools:text="Nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
@@ -42,21 +43,37 @@
                     android:id="@+id/tv_mail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:padding="3dp"
                     android:text="@{user.email}"
                     app:layout_constraintEnd_toStartOf="@id/tv_edad"
                     app:layout_constraintStart_toStartOf="@id/cl_principal"
-                    app:layout_constraintTop_toBottomOf="@id/tv_nombre" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_nombre"
+                    tools:text="correo@gmail.com" />
 
                 <TextView
                     android:id="@+id/tv_edad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:padding="3dp"
                     android:text="@{String.valueOf(user.edad)}"
                     app:layout_constraintEnd_toEndOf="@id/cl_principal"
                     app:layout_constraintStart_toEndOf="@id/tv_mail"
-                    app:layout_constraintTop_toBottomOf="@id/tv_nombre" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_nombre"
+                    tools:text="25" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="@{user.soltero}"
+                    android:enabled="false"
+                    android:text="Soltero"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
