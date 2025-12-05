@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SobrinoBlazquezAsier</string>
+    <string name="usuario_incorrecto">Wrong user</string>
+    <string name="password_incorrecta">Wrong password</string>
+    <string name="finalizar_pedido">Finish order</string>
+    <string name="login">Login</string>
+    <string name="pasword_hint">pasword</string>
+    <string name="login_hint">login</string>
+    <plurals name="precios">
+        <item quantity="one">%d euro</item>
+        <item quantity="other">%d euros</item>
+    </plurals>
+</resources>

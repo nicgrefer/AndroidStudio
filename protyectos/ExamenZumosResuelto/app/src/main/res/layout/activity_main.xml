@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="usuario"
+            type="com.example.examenzumos.Usuario"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_contenido"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/open_bar" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="@string/login_hint"
+                    android:id="@+id/tiet_nombre"
+                    android:text="@{usuario.nombre}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="@string/pasword_hint"
+                    android:inputType="number|numberPassword"
+                    android:id="@+id/tiet_password"
+                    android:text="@{usuario.password.toString()}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:text="@string/login" />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_weight=".7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_precio"
+            app:layout_constraintTop_toBottomOf="@id/ll_contenido"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/lv_zumos" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight=".3"
+            tools:text="texto.precio"
+            app:layout_constraintStart_toEndOf="@+id/lv_zumos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_contenido"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="30sp"
+            android:id="@+id/tv_precio" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
