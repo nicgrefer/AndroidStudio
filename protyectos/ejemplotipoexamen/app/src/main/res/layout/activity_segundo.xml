@@ -6,160 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <GridLayout
-        android:id="@+id/gl_naranja"
-        android:layout_width="409dp"
+    <ImageButton
+        android:id="@+id/btn_naranja"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/gl_piña"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_android_black_24dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_pina"
+        app:layout_constraintHorizontal_weight=".3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#ff0000" />
 
-        <TextView
-            android:id="@+id/tv_producto1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_precioUnidad1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_add1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/tv_cantidadSeleccionada1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-    </GridLayout>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gl_piña"
-        android:layout_width="409dp"
+    <ImageButton
+        android:id="@+id/btn_pina"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/gl_fresa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_naranja">
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_android_black_24dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_fresa"
+        app:layout_constraintHorizontal_weight=".3"
+        app:layout_constraintStart_toEndOf="@id/btn_naranja"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#ffff00" />
 
-        <TextView
-            android:id="@+id/tv_producto2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_precioUnidad2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_add2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/tv_cantidadSeleccionada2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-    </androidx.gridlayout.widget.GridLayout>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gl_fresa"
-        android:layout_width="409dp"
+    <ImageButton
+        android:id="@+id/btn_melocoton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/gl_melocoton"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_android_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_piña">
+        app:layout_constraintHorizontal_weight=".2"
+        app:layout_constraintStart_toEndOf="@id/btn_fresa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#0000ff" />
 
-        <TextView
-            android:id="@+id/tv_producto3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_precioUnidad3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_add3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/tv_cantidadSeleccionada3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-    </androidx.gridlayout.widget.GridLayout>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gl_melocoton"
-        android:layout_width="409dp"
+    <ImageButton
+        android:id="@+id/btn_fresa"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_android_black_24dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_melocoton"
+        app:layout_constraintHorizontal_weight=".2"
+        app:layout_constraintStart_toEndOf="@id/btn_pina"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#00ff00" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_fresa">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_naranja"
+        android:id="@+id/btn_finalizar"
+        android:text="@string/finalizar_pedido"/>
 
-        <TextView
-            android:id="@+id/tv_producto4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tv_precioUnidad5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_add5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/tv_cantidadSeleccionada5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp" />
-    </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
