@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CupidAppSergio</string>
+    <string name="Boton">Inserte enamorados</string>
+    <string name="NombrePersona1">Nombre p1:</string>
+    <string name="NombrePersona2">Nombre p2:</string>
+    <string name="NombreAntiguedad">Antiguedad:</string>
+    <string name="Insertar">Insertar</string>
+</resources>

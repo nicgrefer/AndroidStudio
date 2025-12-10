@@ -9,6 +9,7 @@ import com.example.ejemploexamen2020.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    var listParejas = mutableListOf<Pareja>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) { resultado ->
             if (resultado.resultCode == RESULT_OK) {
-
+                var pareja: Pareja? = resultado.data?.getParcelableExtra<Pareja>("pareja")
+                listParejas.add(pareja!!)
+                binding.rvParejas.adapter?.notyfyItemInserted(listParejas.size - 1)
             }
         }
 
