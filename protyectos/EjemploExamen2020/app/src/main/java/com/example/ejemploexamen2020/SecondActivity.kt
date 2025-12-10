@@ -13,7 +13,18 @@ class SecondActivity : AppCompatActivity(){
         enableEdgeToEdge()
         setContentView(binding.root)
 
+        binding.bInsertar.setOnClickListener {
+            var pareja: Pareja = Pareja(
+                binding.tvNombre1.toString(),
+                binding.tvNombre2.toString(),
+                binding.tietAntiguedad.text.toString().toInt()
+            )
 
+            intent.putExtra("pareja",pareja)
+            setResult(RESULT_OK,intent)
+            finish()
+
+        }
 
     }
 }

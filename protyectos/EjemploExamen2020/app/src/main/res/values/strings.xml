@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EjemploExamen2020</string>
+    <string name="cargar">cargar</string>
+    <string name="name1">nombre 1</string>
+    <string name="name2">nombre 2</string>
+    <string name="duracion">años juntoa</string>
 </resources>

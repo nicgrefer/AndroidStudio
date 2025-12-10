@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
- q
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="356dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="pareja"
+            type="com.example.ejemploexamen2020.Pareja" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/tv_nombre1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/name1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/til_persona1"
+            app:layout_constraintEnd_toStartOf="@id/til_persona1"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_persona1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_nombre1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@id/tv_nombre1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_persona1"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="@{pareja.nombre1}"
+                android:hint="Inserte nombre" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_nombre2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/name2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/til_persona2"
+            app:layout_constraintEnd_toStartOf="@id/til_persona2"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nombre1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_persona2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_nombre2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@id/tv_nombre2"
+            app:layout_constraintTop_toBottomOf="@id/til_persona1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_persona2"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="@{pareja.nombre2}"
+                android:hint="Inserte nombre2"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_antiguedad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/duracion"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/til_antiguedad"
+            app:layout_constraintEnd_toStartOf="@id/til_antiguedad"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nombre2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_antiguedad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_antiguedad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@id/tv_antiguedad"
+            app:layout_constraintTop_toBottomOf="@id/til_persona2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_antiguedad"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="@{String.valueOf(pareja.duracion)}"
+                android:hint="Inserte antigüedad"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/b_insertar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/cargar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_antiguedad" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
