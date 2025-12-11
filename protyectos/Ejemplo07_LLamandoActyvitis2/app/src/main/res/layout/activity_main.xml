@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_datos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_datos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserte informacion necesaria"
+            android:textColorHint="#546E7A" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emeil"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/btt_llamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Llamar" />
+
+    <Button
+        android:id="@+id/btt_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Web" />
+
+    <Button
+        android:id="@+id/btt_mapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mapa" />
+
+    <Button
+        android:id="@+id/btt_whasapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Whashap" />
+</LinearLayout>
