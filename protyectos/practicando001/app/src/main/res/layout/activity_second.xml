@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_persoan1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_persona1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Nombre 1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nombre1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_nombre1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="nombre 1" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_persona2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tp_persoan2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Nombre 2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nombre2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_nombre2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="nombre 2" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_duracion"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_duracion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Duracion" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_duracion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet_duracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="tiempo en años enteros" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btt_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Añadir" />
+</LinearLayout>
