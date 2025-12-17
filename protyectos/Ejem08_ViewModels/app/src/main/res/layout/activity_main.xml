@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="cont"
+            type="com.example.ejem08_viewmodels.Contador" />
+        <variable
+            name="contNormal"
+            type="com.example.ejem08_viewmodels.ContadorNormal" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/tv_contadorNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"Normal: " + contNormal.contador}'
+            android:textSize="32sp"
+            tools:text="contador normal : 0" />
+
+
+        <TextView
+            android:id="@+id/tv_contador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"Viewmodel: " + cont.contador}'
+            android:textSize="32sp"
+            tools:text="contador : 0" />
+
+        <Button
+            android:id="@+id/b_incrementar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incrementar"
+            />
+
+        <Button
+            android:id="@+id/b_llamarSegundoActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Llamar a segundo Activity"
+            />
+        <!-- android:onClick="@{() -> viewmodel.incrementar()}" -->
+
+    </LinearLayout>
+</layout>
