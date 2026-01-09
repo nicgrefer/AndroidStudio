@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -14,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="2dp">
 
@@ -24,22 +22,31 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/img_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                app:srcCompat="@drawable/baseline_delete_24" />
+
             <TextView
                 android:id="@+id/tv_nombre"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="16sp"
+                android:layout_weight="0.375"
+                android:text="@{persona.nombre}"
                 android:textColor="#212121"
+                android:textSize="16sp"
                 tools:text="Nombre prueba" />
 
             <TextView
                 android:id="@+id/tv_sexo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="16sp"
+                android:layout_weight="0.375"
+                android:text="@{persona.sexo}"
                 android:textColor="#757575"
+                android:textSize="16sp"
                 tools:text="Sexo prueba" />
 
         </LinearLayout>

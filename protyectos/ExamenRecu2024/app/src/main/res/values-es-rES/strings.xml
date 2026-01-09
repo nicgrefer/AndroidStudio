@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExamenRecu2024</string>
+    <string name="nombre">Nombre</string>
+    <string name="sexo">Sexo</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="a_adir">Añadir</string>
+    <string name="avanza">Avanza</string>
+</resources>

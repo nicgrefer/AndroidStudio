@@ -12,13 +12,31 @@
         android:id="@+id/b_avanzar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Avanza"
+        android:text="@string/avanza"
         android:textAlignment="center" />
 
-    <ListView
-        android:id="@+id/lv_personas"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:listitem="@layout/elemento_persoan"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_personas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.5"
+            tools:listitem="@layout/elemento_persoan">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ListView
+            android:id="@+id/lv_datos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+
 </LinearLayout>

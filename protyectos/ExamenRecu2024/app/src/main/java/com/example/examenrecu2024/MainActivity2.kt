@@ -36,5 +36,11 @@ class MainActivity2 : AppCompatActivity() {
             setResult(RESULT_OK, intentResultado)
             finish()
         }
+
+        binding.tbOperar.setOnCheckedChangeListener { toogleBooton, isActivo ->
+            binding.bAnadir.isEnabled = isActivo
+
+        }
+
     }
 }
