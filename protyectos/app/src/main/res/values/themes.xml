@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme.  Al quitar eso aparecera la barra de accion por defecto-->
+    <style name="Base.Theme.Ejem10_FragmentConParametro" parent="Theme.Material3.DayNight">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Ejem10_FragmentConParametro" parent="Base.Theme.Ejem10_FragmentConParametro" />
+</resources>
