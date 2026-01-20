@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AEF44336"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hola soy el activity"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btt_cambiarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cambio fragment en ejecución" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentStatic"
+        android:name="com.example.ejemplo09_holafragment.HolaFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentDinamic"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

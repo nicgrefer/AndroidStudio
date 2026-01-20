@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BlancoJoseLuis</string>
+    <string name="tv_nombre_text">Nombre:</string>
+    <string name="tv_edad_text">Edad:</string>
+    <string name="tv_ciudad_text">Ciudad:</string>
+    <string name="et_nombre_hint">Nombre</string>
+    <string name="et_edad_hint">Edad</string>
+    <string name="b_grabar_text">GRABAR</string>
+    <string name="tv_borrar_text">BORRAR</string>
+</resources>

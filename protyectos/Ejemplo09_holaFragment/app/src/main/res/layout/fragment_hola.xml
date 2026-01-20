@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B"
+    android:orientation="vertical"
+    tools:context=".HolaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_saludo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hola mundo fragment"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btt_saludo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saludar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_dato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_dato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce el dato para pasar al segundo fragment" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btt_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar dato" />
+
+</LinearLayout>
