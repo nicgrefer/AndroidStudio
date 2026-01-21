@@ -33,18 +33,26 @@ class FragmentConParametro : Fragment() {
         }
     }
 
-    lateinit var binding: FragmentConParametroBinding
+    lateinit var binding:FragmentConParametroBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentConParametroBinding.inflate(inflater,container,false)
-        binding.tvDatosParametro.text = "Parametro 1:$param1 \n Parametro 2: $param2"
+        binding= FragmentConParametroBinding.inflate(inflater,container,false)
+        binding.tvDatosParametro.text="Parametro 1: $param1 \n Parametro 2: $param2"
         return binding.root
-
     }
 
-companion object {
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment FragmentConParametro.
+         */
+        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FragmentConParametro().apply {
@@ -54,5 +62,4 @@ companion object {
                 }
             }
     }
-
-    }
+}
