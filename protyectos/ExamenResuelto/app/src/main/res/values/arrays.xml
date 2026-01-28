@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="s_ciudades_items">
+
+        <item>Madrid</item>
+        <item>Barcelona</item>
+        <item>Valencia</item>
+        <item>Valladolid</item>
+    </string-array>
+</resources>
