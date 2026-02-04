@@ -15,6 +15,10 @@ class Fragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = Fragment2Binding.inflate(inflater,container,false)
+        parentFragmentManager.setFragmentResultListener("dato",this){key,bundel ->
+            val resultado = bundel.getString("dato")
+            binding.tvDato.text = resultado
+        }
         return binding.root
     }
 

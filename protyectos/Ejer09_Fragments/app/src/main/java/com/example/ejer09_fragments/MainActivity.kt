@@ -11,20 +11,23 @@ import com.example.ejer09_fragments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.bttFr1.setOnClickListener {
-            cargarFragment(Fragment1(),binding.tietDato.text.toString())
+            cargarFragment(Fragment1())
         }
 
     }
     private fun cargarFragment(fragment: Fragment){
+        val bundle = Bundle().apply {
+            putString("dato", binding.tietDato.text.toString())
+        }
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fcv1,fragment)
+            add(R.id.fcv1, fragment)
             commit()
         }
     }
