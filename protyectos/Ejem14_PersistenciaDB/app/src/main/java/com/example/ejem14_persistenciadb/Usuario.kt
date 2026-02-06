@@ -1,3 +1,12 @@
 package com.example.ejem14_persistenciadb
 
-data class Usuario(val nombre: String, val edad: Int)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "usuarios")
+data class Usuario (@PrimaryKey(autoGenerate = true) var id:Int= 0,
+                   @ColumnInfo val nombre:String,
+                   @ColumnInfo(name = "edad") val edad:Int){
+
+}
