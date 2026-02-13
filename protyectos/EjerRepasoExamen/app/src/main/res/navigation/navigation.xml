@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentParticipantes">
+
+    <fragment
+        android:id="@+id/fragmentParticipantes"
+        android:name="com.example.ejerrepasoexamen.FragmentParticipantes"
+        android:label="fragment_participantes"
+        tools:layout="@layout/fragment_participantes" >
+        <action
+            android:id="@+id/action_fragmentParticipantes_to_fragmentGastos"
+            app:destination="@id/fragmentGastos" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGastos"
+        android:name="com.example.ejerrepasoexamen.FragmentGastos"
+        android:label="fragment_gastos"
+        tools:layout="@layout/fragment_gastos" >
+        <action
+            android:id="@+id/action_fragmentGastos_to_fragmentResultados"
+            app:destination="@id/fragmentResultados" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentResultados"
+        android:name="com.example.ejerrepasoexamen.FragmentResultados"
+        android:label="fragment_resultados"
+        tools:layout="@layout/fragment_resultados" >
+        <action
+            android:id="@+id/action_fragmentResultados_to_fragmentParticipantes"
+            app:destination="@id/fragmentParticipantes" />
+    </fragment>
+</navigation>
