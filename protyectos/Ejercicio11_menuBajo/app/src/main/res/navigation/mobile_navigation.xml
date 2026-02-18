@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/FragmentParticipantes">
+    <fragment
+        android:id="@+id/FragmentGastos"
+        android:name="com.example.ejercicio11_menubajo.FragmentGastos"
+        android:label="fragment_gastos"
+        tools:layout="@layout/fragment_gastos" >
+        <action
+            android:id="@+id/action_fragmentGastos_to_fragmentResultados"
+            app:destination="@id/FragmentResultados" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentParticipantes"
+        android:name="com.example.ejercicio11_menubajo.FragmentParticipantes"
+        android:label="fragment_participantes"
+        tools:layout="@layout/fragment_participantes" >
+        <action
+            android:id="@+id/action_fragmentParticipantes_to_fragmentGastos"
+            app:destination="@id/FragmentGastos" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentResultados"
+        android:name="com.example.ejercicio11_menubajo.FragmentResultados"
+        android:label="fragment_resultados"
+        tools:layout="@layout/fragment_resultados" >
+        <action
+            android:id="@+id/action_fragmentResultados_to_fragmentParticipantes"
+            app:destination="@id/FragmentParticipantes" />
+    </fragment>
+</navigation>

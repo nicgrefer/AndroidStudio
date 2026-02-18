@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ejer1.FragmentInicial">
+
+    <TextView
+        android:id="@+id/tv_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre:" />
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tv_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edad:" />
+
+    <EditText
+        android:id="@+id/et_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tv_estadoCivil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado Civil:" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_soltero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soltero" />
+
+        <RadioButton
+            android:id="@+id/rb_casado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Casado" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/b_añadir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir" />
+</LinearLayout>
