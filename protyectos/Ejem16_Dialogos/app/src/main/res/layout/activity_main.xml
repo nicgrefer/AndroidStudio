@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btt_confirmacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialogo de confirmacion" />
+
+    <Button
+        android:id="@+id/btt_selector_multiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialogo de seleccion simple" />
+
+    <Button
+        android:id="@+id/btt_selectones_multiples"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialogo seleccionar barias" />
+</LinearLayout>
