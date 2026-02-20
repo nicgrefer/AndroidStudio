@@ -2,6 +2,7 @@ package com.example.casadoalberto
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -20,7 +21,16 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.setFragmentResultListener("requestKey", this) { key, bundle ->
             val result = bundle.getString("resultado")
             binding.textView.text = result
+        }
 
+        binding.bHistorial.setOnClickListener {
+            val dialogo: AlertDialog.Builder= AlertDialog.Builder(this)
+            dialogo.setTitle("Estas seguro?")
+            dialogo.setPositiveButton("Sí") { dialogInterface, i ->
+
+            }
+            dialogo.setNegativeButton("No") { dialogInterface, i -> }
+            dialogo.show()
         }
     }
 }

@@ -8,6 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.os.bundleOf
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.example.casadoalberto.BD
+import com.example.casadoalberto.Resultado
+import com.example.casadoalberto.ResultadoDAO
 import com.example.casadoalberto.databinding.FragmentCalculatorBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -77,6 +82,9 @@ class CalculatorFragment : Fragment() {
             binding.bIgual.isEnabled=false
             binding.bSumar.isEnabled=true
             parentFragmentManager.setFragmentResult("requestKey", bundleOf("resultado" to result))
+
+            val r : Resultado = Resultado(0,result)
+            Room.databaseBuilder(requireContext(), BD::class.java, "bdResultados").allowMainThreadQueries().build().resultadoDAO()!!.insertar(r)
         }
 
 
