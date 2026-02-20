@@ -1,0 +1,26 @@
+package com.example.casadoalberto
+
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.casadoalberto.databinding.ActivityMainBinding
+import local.CalculatorFragment
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var binding : ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        supportFragmentManager.setFragmentResultListener("requestKey", this) { key, bundle ->
+            val result = bundle.getString("resultado")
+            binding.textView.text = result
+
+        }
+    }
+}
