@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.casadoalberto.databinding.ActivityMainBinding
+import com.example.casadoalberto.databinding.FragmentHistorialBinding
 import local.CalculatorFragment
 
 class MainActivity : AppCompatActivity() {
@@ -24,11 +25,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.bHistorial.setOnClickListener {
-            val dialogo: AlertDialog.Builder= AlertDialog.Builder(this)
+            val dialogo: AlertDialog.Builder = AlertDialog.Builder(this)
             dialogo.setTitle("Estas seguro?")
             dialogo.setPositiveButton("Sí") { dialogInterface, i ->
-
+                supportFragmentManager.beginTransaction().apply {
+                    replace(
+                        binding.fragmentContainerView.id,
+                        HistorialFragment.newInstance(binding.textView.text.toString())
+                    )
+                    commit()
+                }
             }
+
+
             dialogo.setNegativeButton("No") { dialogInterface, i -> }
             dialogo.show()
         }
