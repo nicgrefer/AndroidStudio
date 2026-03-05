@@ -1,3 +1,3 @@
 package com.example.ejem18_holajetpackcompose
 
-data class Usuario(val name: String, val hombre : Boolean, val edad : Int)
+data class Usuario(val nombre: String, val hombre: Boolean, val edad: Int, val ciudad:String)
